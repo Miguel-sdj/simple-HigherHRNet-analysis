@@ -209,7 +209,7 @@ Sim, modelos mais complexos demoram mais para rodar, a diferença entre o modelo
 ## Modelos mais complexos são mais pesados e 'rodam' em framerates mais baixos?
 Sim, os modelos mais complexos como comprovados nos testes acimas executam em um nível de framerate mais baixo, exigindo mais poder computacional.
 ## Se modelos mais complexos são melhores, devo usar-los sempre?
-Depende, se o objetivo for o poder computacional for limitado e o 'video' a ser testado for de nível simples, talvez não seja necessário utilizar o modelo mais potente, como comprovado no video4, onde o modelo mediano já conseguiu suprir os 100% de acurácia e conseguiu realizar essa tarefa em cerca de 33$ mais rápido do que o modelo mais potente.
+Depende, se o objetivo for o poder computacional for limitado e o 'video' a ser testado for de nível simples, talvez não seja necessário utilizar o modelo mais potente, como comprovado no video4, onde o modelo mediano já conseguiu suprir os 100% de acurácia e conseguiu realizar essa tarefa em cerca de 33% mais rápido do que o modelo mais potente.
 
 ## Projetos futuros
 Para projetos futuros gostaria de refazer os testes testando também outros parâmetros e valores
