@@ -1,7 +1,3 @@
-tive problema no torch relacionado ao meu cuda onde só estava reconhecendo a cpu. resolvi fácil reinstalanto o torch para usar a versão do meu cuda toolkit
-criei uma funcao que salva os dados em um csv para realizar uma análise de dados posterior entre os modelos
-como possuo uma gpu potente tive que fazer algumas alterações no torch para que ele usase os núcleos cuda ao invés da cpu para maior disponibilidade de recursos.
-
 # Índice
 1. [Resumo do projeto](#Resumo-do-projeto)
 2. [Instalação](#Instalação)
@@ -34,6 +30,40 @@ cd simple-HigherHRNet
 O processo de clonagem do repositório foi feito dessa forma, agora precisamos configurar o ambiente.
 # Configuração de Ambiente
 Para a configuração do ambiente utilizaremos o anaconda para organização das bibliotecas usadas pelo projeto utilizando um ambiente virtual, para organizar melhor o código.
+
+Baixei o anaconda para windows e apesar de propor uma interface gráfico preferi utilizar pelo terminal pois já estou mais acustumado a executar comando por lá.
+
+executei o comando sem especificar a versão do python:
+
+```
+conda create --name simple-analysis
+```
+
+<img src="imgs/image-x.png" width="800" /> 
+
+e ativei usando o 
+
+```
+conda activate simple-analysis
+```
+
+Proximo passo, vou instalar as dependencias do projeto utilizando o arquivo requirements.txt.
+
+```
+pip install -r requirements.txt
+```
+
+Para o torch precisei realizar uma configuração extra, pois para utilizar meus núcleos cudas precisei procurar a versão específica que lida com o cuda toolkit da minha placa de vídeo atual.
+
+então eu desinstalei a versão do torch atual e instalei a versão necessária utilizando os seguintes comandos
+
+```
+pip uninstall torch
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+```
+
+Após isso o ambiente virtual está configurado corretamente.
+
 # Teste em vídeos
 No documento do projeto foi compartilhado um vídeo a ser utilizado nos testes como título de "panoptic" que tomei como liberdade para renomeiar para "video1" pois pretendo testar  outros videos também. No Readme do projeto é disponibilizado o código que é executado para realizar a medição de quantas pessoas estão no vídeo. procurei por vídeos na plataforma do youtube em que foram gravados por uma câmera estática onde pessoas passam pelo vídeo e adicionei para a lista de vídeos a serem analisados.
 
@@ -108,7 +138,7 @@ primeiro fiz a plotagem dos dados de número de pessoas detectadas
 
 <img src="imgs/image-11.png" width="600" />
 
-<img src="imgs/image-12.png" width="1200" />
+<img src="imgs/image-12.png" width="800" />
 
 já podemos perceber uma acurácia maior para os modelos mais potentes, mas e o tempo necessário para rodar?
 
@@ -126,16 +156,16 @@ onde a média de fps foi bem menor para os modelos mais pesados
 para o vídeo 2 realizaremos o mesmo teste, primeiro o gráfico de número de pessoas: 
 
 <img src="imgs/image-16.png" width="400" />
-<img src="imgs/image-17.png" width="1200" />
+<img src="imgs/image-17.png" width="800" />
 
 depois o tempo decorrido no video 2 pelos modelos
 
-<img src="imgs/image-18.png" width="1200" />
+<img src="imgs/image-18.png" width="800" />
 
 e por fim os gráficos do custo computacional (fps) do video 2
 
 <img src="imgs/image-19.png" width="1200" />
-<img src="imgs/image-20.png" width="1200" />
+<img src="imgs/image-20.png" width="800" />
 
 ## Vídeo 3
 Para o vídeo 3 primeiro plotei os gráficos de numero de pessoas detectadas no vídeo:
